@@ -31,8 +31,11 @@ function dateToTimestamp(date) {
  * Date(2023, 5, 1, 8, 20, 55) => '08:20:55'
  * Date(2015, 10, 20, 23, 15, 1) => '23:15:01'
  */
-function getTime(/* date */) {
-  throw new Error('Not implemented');
+function getTime(date) {
+  const hh = (date.getHours() < 10 ? '0' : '') + date.getHours();
+  const mm = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+  const ss = (date.getSeconds() < 10 ? '0' : '') + date.getSeconds();
+  return `${hh}:${mm}:${ss}`;
 }
 
 /**
